@@ -1,0 +1,16 @@
+Version 0.1 - First ported and compilable MILOS on STM32F4
+
+Ported files:
+ 1. core/src/rtc.c
+ 2. common/src/io.c
+ 3. common/inc/io.h
+ 4. hw/boards/src/stm32f4discovery.c
+ 5. hw/boards/inc/stm32f4discovery.h
+ 6. hw/compilers/gcc/src/plat_comp_dep.c
+ 7. hw/compilers/gcc/inc/plat_comp_dep.h
+ 8. hw/compilers/gcc/startup_stm32f4xx.s
+ 9. hw/compilers/gcc/stm32f4xx_flash.ld
+ 10. platform/src/plat_cpu.c
+ 11. platform/src/plat_rtc.c
+ 
+ 

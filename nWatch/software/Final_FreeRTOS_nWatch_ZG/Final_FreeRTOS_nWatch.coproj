@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.8" name="Final_FreeRTOS_nWatch_ZE">
+  <Target name="Final_FreeRTOS_nWatch" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="345" chipName="STM32F407ZG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="1"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value="-std=c99"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="FPU" value="2"/>
+        <Option name="CompileBeforeDebug" value="1"/>
+        <Includepaths>
+          <Includepath path="."/>
+          <Includepath path="freertos/source/include"/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="__ASSEMBLY__"/>
+          <Define name="__FPU_USED"/>
+          <Define name="STM32F407ZG"/>
+          <Define name="STM32F4XX"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Use base C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; "/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <LinkedLibraries>
+          <Libset dir="stemwin\lib\" libs="stemwin528_cm4_os_gcc_ot"/>
+        </LinkedLibraries>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="./arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="final_freertos_nwatch/debug/bin/"/>
+        <Option name="Name" value="Final_FreeRTOS_nWatch"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="0"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="1" value="&quot;${project.path}/../../../../../../../../../coocox/coide/bin/programdownload_zg.bat&quot;"/>
+        <UserRun name="Run#2" type="After" checked="0" value="${project.path}/../../../../../../coocox/coide/bin/gdbserver.exe"/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="2M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./">
+    <Component id="54" name="M4 CMSIS Core" path="" type="2"/>
+    <Component id="500" name="CMSIS BOOT" path="" type="2"/>
+    <Component id="501" name="RCC" path="" type="2"/>
+    <Component id="502" name="PWR" path="" type="2"/>
+    <Component id="504" name="GPIO" path="" type="2"/>
+    <Component id="505" name="EXTI" path="" type="2"/>
+    <Component id="506" name="RTC" path="" type="2"/>
+    <Component id="507" name="IWDG" path="" type="2"/>
+    <Component id="509" name="SPI" path="" type="2"/>
+    <Component id="510" name="I2C" path="" type="2"/>
+    <Component id="511" name="DMA" path="" type="2"/>
+    <Component id="512" name="FLASH" path="" type="2"/>
+    <Component id="513" name="TIM" path="" type="2"/>
+    <Component id="514" name="ADC" path="" type="2"/>
+    <Component id="516" name="FSMC" path="" type="2"/>
+    <Component id="517" name="USART" path="" type="2"/>
+    <Component id="518" name="RNG" path="" type="2"/>
+    <Component id="520" name="SDIO" path="" type="2"/>
+    <Component id="524" name="MISC" path="" type="2"/>
+    <Component id="526" name="SYSCFG" path="" type="2"/>
+    <Component id="720" name="FreeRTOS" path="" type="2"/>
+  </Components>
+  <Files>
+    <File name="libjpeg/jerror.h" path="libjpeg/jerror.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
+    <File name="STEMWIN/GUI_Type.h" path="STemWin_aktualny/STemWin/inc/GUI_Type.h" type="1"/>
+    <File name="usb/usb_otg.h" path="USB/OTG_driver/usb_otg.h" type="1"/>
+    <File name="nokia_lcd" path="" type="2"/>
+    <File name="STEMWIN/CHOOSEFILE.h" path="STemWin_aktualny/STemWin/inc/CHOOSEFILE.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
+    <File name="STEMWIN/GUI_BMP_Private.h" path="STemWin_aktualny/STemWin/inc/GUI_BMP_Private.h" type="1"/>
+    <File name="usb/usbh_msc_scsi.h" path="USB/HOST_lib/usbh_msc_scsi.h" type="1"/>
+    <File name="global_inc.c" path="global_inc.c" type="1"/>
+    <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="elements/list1.h" path="list1.h" type="1"/>
+    <File name="nokia_lcd/itoa.h" path="nokia_LCD/itoa.h" type="1"/>
+    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
+    <File name="usb/usbd_ioreq.h" path="USB/DEVICE_lib/usbd_ioreq.h" type="1"/>
+    <File name="STEMWIN/global_includes.h" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/global_includes.h" type="1"/>
+    <File name="usb/usbd_msc_scsi.h" path="USB/DEVICE_lib/usbd_msc_scsi.h" type="1"/>
+    <File name="STEMWIN/LISTVIEW.h" path="STemWin_aktualny/STemWin/inc/LISTVIEW.h" type="1"/>
+    <File name="usb/usb_hcd_int.h" path="USB/OTG_driver/usb_hcd_int.h" type="1"/>
+    <File name="apps/calc.h" path="calc.h" type="1"/>
+    <File name="main.h" path="main.h" type="1"/>
+    <File name="usb/usbd_msc_scsi.c" path="USB/DEVICE_lib/usbd_msc_scsi.c" type="1"/>
+    <File name="usb/usb_defines.h" path="USB/OTG_driver/usb_defines.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_iwdg.c" path="cmsis_lib/source/stm32f4xx_iwdg.c" type="1"/>
+    <File name="STEMWIN/CHECKBOX_Private.h" path="STemWin_aktualny/STemWin/inc/CHECKBOX_Private.h" type="1"/>
+    <File name="elements" path="" type="2"/>
+    <File name="STEMWIN/GUI.h" path="STemWin_aktualny/STemWin/inc/GUI.h" type="1"/>
+    <File name="STEMWIN/GUI_SIM_Win32.h" path="STemWin_aktualny/STemWin/inc/GUI_SIM_Win32.h" type="1"/>
+    <File name="FreeRTOS/FreeRTOSConfig.h" path="FreeRTOS/Source/include/FreeRTOSConfig_template.h" type="1"/>
+    <File name="FreeRTOS/core/tasks.c" path="FreeRTOS/Source/tasks.c" type="1"/>
+    <File name="sram" path="" type="2"/>
+    <File name="usb/usbh_msc_core.h" path="USB/HOST_lib/usbh_msc_core.h" type="1"/>
+    <File name="libjpeg/decode.h" path="libjpeg/decode.h" type="1"/>
+    <File name="usb/usb_conf.h" path="USB/DRD/usb_conf.h" type="1"/>
+    <File name="STEMWIN/KNOB_Private.h" path="STemWin_aktualny/STemWin/inc/KNOB_Private.h" type="1"/>
+    <File name="LCD_nokia.s" path="LCD_nokia.s" type="1"/>
+    <File name="STEMWIN/GUI_SetOrientationCX.h" path="STemWin_aktualny/STemWin/inc/GUI_SetOrientationCX.h" type="1"/>
+    <File name="usb/usb_otg.c" path="USB/OTG_driver/usb_otg.c" type="1"/>
+    <File name="STEMWIN/HEADER_Private.h" path="STemWin_aktualny/STemWin/inc/HEADER_Private.h" type="1"/>
+    <File name="usb/usb_bsp.h" path="USB/OTG_driver/usb_bsp.h" type="1"/>
+    <File name="STEMWIN/GUI_VNC.h" path="STemWin_aktualny/STemWin/inc/GUI_VNC.h" type="1"/>
+    <File name="usb/usb_hcd_int.c" path="USB/OTG_driver/usb_hcd_int.c" type="1"/>
+    <File name="STEMWIN/LISTWHEEL.h" path="STemWin_aktualny/STemWin/inc/LISTWHEEL.h" type="1"/>
+    <File name="apps" path="" type="2"/>
+    <File name="libjpeg/jmemnobs.c" path="libjpeg/jmemnobs.c" type="1"/>
+    <File name="STEMWIN/DROPDOWN.h" path="STemWin_aktualny/STemWin/inc/DROPDOWN.h" type="1"/>
+    <File name="STEMWIN/LCD_Protected.h" path="STemWin_aktualny/STemWin/inc/LCD_Protected.h" type="1"/>
+    <File name="usb/usbh_def.h" path="USB/HOST_lib/usbh_def.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_syscfg.c" path="cmsis_lib/source/stm32f4xx_syscfg.c" type="1"/>
+    <File name="libjpeg/jpeglib.h" path="libjpeg/jpeglib.h" type="1"/>
+    <File name="usb/usbh_conf.h" path="USB/DRD/usbh_conf.h" type="1"/>
+    <File name="libjpeg/jdmerge.c" path="libjpeg/jdmerge.c" type="1"/>
+    <File name="tjpgdec/tjpgd.h" path="jpeg/tjpgd.h" type="1"/>
+    <File name="STEMWIN/GUI_SPRITE_Private.h" path="STemWin_aktualny/STemWin/inc/GUI_SPRITE_Private.h" type="1"/>
+    <File name="STEMWIN/MENU.h" path="STemWin_aktualny/STemWin/inc/MENU.h" type="1"/>
+    <File name="usb/usb_dcd.h" path="USB/OTG_driver/usb_dcd.h" type="1"/>
+    <File name="SolidEdgeStencil118.c" path="SolidEdgeStencil118.c" type="1"/>
+    <File name="FreeRTOS/core/list.c" path="FreeRTOS/Source/list.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
+    <File name="STEMWIN/WM_Intern.h" path="STemWin_aktualny/STemWin/inc/WM_Intern.h" type="1"/>
+    <File name="libjpeg/jdtrans.c" path="libjpeg/jdtrans.c" type="1"/>
+    <File name="FreeRTOS/core" path="" type="2"/>
+    <File name="cmsis_lib/source/stm32f4xx_pwr.c" path="cmsis_lib/source/stm32f4xx_pwr.c" type="1"/>
+    <File name="trace/trcKernel.c" path="GenericRecorderLibSrc/trcKernel.c" type="1"/>
+    <File name="apps/heading.c" path="heading.c" type="1"/>
+    <File name="apps/settings.h" path="settings.h" type="1"/>
+    <File name="libjpeg/jcprepct.c" path="libjpeg/jcprepct.c" type="1"/>
+    <File name="touch/stmpe811.h" path="touch/stmpe811.h" type="1"/>
+    <File name="STEMWIN/BUTTON_Private.h" path="STemWin_aktualny/STemWin/inc/BUTTON_Private.h" type="1"/>
+    <File name="ff/ff.h" path="ff/ff.h" type="1"/>
+    <File name="libjpeg/jcsample.c" path="libjpeg/jcsample.c" type="1"/>
+    <File name="usb/usbd_msc_data.c" path="USB/DEVICE_lib/usbd_msc_data.c" type="1"/>
+    <File name="trace/trcBase.h" path="GenericRecorderLibSrc/Include/trcBase.h" type="1"/>
+    <File name="usb/usb_bsp.c" path="USB/DRD/usb_bsp.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_spi.h" path="cmsis_lib/include/stm32f4xx_spi.h" type="1"/>
+    <File name="STEMWIN/EDIT.h" path="STemWin_aktualny/STemWin/inc/EDIT.h" type="1"/>
+    <File name="usb/usbh_msc_bot.c" path="USB/HOST_lib/usbh_msc_bot.c" type="1"/>
+    <File name="ff/ccsbcs.c" path="ff/ccsbcs.c" type="1"/>
+    <File name="libjpeg/jfdctflt.c" path="libjpeg/jfdctflt.c" type="1"/>
+    <File name="trace/trcKernelPortFreeRTOS.c" path="GenericRecorderLibSrc/trcKernelPortFreeRTOS.c" type="1"/>
+    <File name="apps/heading.h" path="heading.h" type="1"/>
+    <File name="libjpeg/jaricom.c" path="libjpeg/jaricom.c" type="1"/>
+    <File name="cmsis_lib" path="" type="2"/>
+    <File name="MPU6050/inv_mpu_dmp_motion_driver.h" path="mpu6050/inv_mpu_dmp_motion_driver.h" type="1"/>
+    <File name="touch/stmpe811.c" path="touch/stmpe811.c" type="1"/>
+    <File name="nokia_lcd/LCD_6300.h" path="nokia_LCD/LCD_6300.h" type="1"/>
+    <File name="usb/usbh_msc_scsi.c" path="USB/HOST_lib/usbh_msc_scsi.c" type="1"/>
+    <File name="libjpeg/jdcoefct.c" path="libjpeg/jdcoefct.c" type="1"/>
+    <File name="usb/usb_core.h" path="USB/OTG_driver/usb_core.h" type="1"/>
+    <File name="libjpeg/jddctmgr.c" path="libjpeg/jddctmgr.c" type="1"/>
+    <File name="FreeRTOS/memory/heap_4.c" path="FreeRTOS/Source/portable/MemMang/heap_4.c" type="1"/>
+    <File name="trace/trcConfig.h" path="GenericRecorderLibSrc/ConfigurationTemplate/trcConfig.h" type="1"/>
+    <File name="STEMWIN/GUI_JPEG_Private.h" path="STemWin_aktualny/STemWin/inc/GUI_JPEG_Private.h" type="1"/>
+    <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
+    <File name="trace/trcKernel.h" path="GenericRecorderLibSrc/Include/trcKernel.h" type="1"/>
+    <File name="libjpeg/jchuff.c" path="libjpeg/jchuff.c" type="1"/>
+    <File name="STEMWIN/CHOOSECOLOR.h" path="STemWin_aktualny/STemWin/inc/CHOOSECOLOR.h" type="1"/>
+    <File name="STEMWIN/WINDOW_Private.h" path="STemWin_aktualny/STemWin/inc/WINDOW_Private.h" type="1"/>
+    <File name="STEMWIN/GUI_X.c" path="STemWin/OS/GUI_X.c" type="1"/>
+    <File name="MPU6050/dmpKey.h" path="mpu6050/dmpKey.h" type="1"/>
+    <File name="elements/list1.c" path="list1.c" type="1"/>
+    <File name="MPU6050/dmpmap.h" path="mpu6050/dmpmap.h" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
+    <File name="STEMWIN/bsp.c" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/bsp.c" type="1"/>
+    <File name="elements/textbox.h" path="elements/textbox.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_i2c.h" path="cmsis_lib/include/stm32f4xx_i2c.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
+    <File name="MPU6050.h" path="MPU5060.h" type="1"/>
+    <File name="STEMWIN/GUI_GIF_Private.h" path="STemWin_aktualny/STemWin/inc/GUI_GIF_Private.h" type="1"/>
+    <File name="trace/trcKernelPortFreeRTOS.h" path="GenericRecorderLibSrc/Include/trcKernelPortFreeRTOS.h" type="1"/>
+    <File name="STEMWIN/GUI_Debug.h" path="STemWin_aktualny/STemWin/inc/GUI_Debug.h" type="1"/>
+    <File name="usb/usb_core.c" path="USB/OTG_driver/usb_core.c" type="1"/>
+    <File name="usb/usbd_req.c" path="USB/DEVICE_lib/usbd_req.c" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="tjpgdec" path="" type="2"/>
+    <File name="STEMWIN/CHECKBOX.h" path="STemWin_aktualny/STemWin/inc/CHECKBOX.h" type="1"/>
+    <File name="STEMWIN/ICONVIEW.h" path="STemWin_aktualny/STemWin/inc/ICONVIEW.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_fsmc.c" path="cmsis_lib/source/stm32f4xx_fsmc.c" type="1"/>
+    <File name="MPU6050" path="" type="2"/>
+    <File name="STEMWIN/GUI_HOOK.h" path="STemWin_aktualny/STemWin/inc/GUI_HOOK.h" type="1"/>
+    <File name="STEMWIN/GUI_Private.h" path="STemWin_aktualny/STemWin/inc/GUI_Private.h" type="1"/>
+    <File name="STEMWIN/WM.h" path="STemWin_aktualny/STemWin/inc/WM.h" type="1"/>
+    <File name="STEMWIN/GUI_FontIntern.h" path="STemWin_aktualny/STemWin/inc/GUI_FontIntern.h" type="1"/>
+    <File name="libjpeg/jcparam.c" path="libjpeg/jcparam.c" type="1"/>
+    <File name="libjpeg/jdatadst.c" path="libjpeg/jdatadst.c" type="1"/>
+    <File name="STEMWIN/LISTVIEW_Private.h" path="STemWin_aktualny/STemWin/inc/LISTVIEW_Private.h" type="1"/>
+    <File name="tjpgdec/bsp_jpg.h" path="jpeg/bsp_jpg.h" type="1"/>
+    <File name="apps/menuv2.c" path="menuv2.c" type="1"/>
+    <File name="STEMWIN/LCD_SIM.h" path="STemWin_aktualny/STemWin/inc/LCD_SIM.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_adc.c" path="cmsis_lib/source/stm32f4xx_adc.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
+    <File name="trace/trcBase.c" path="GenericRecorderLibSrc/trcBase.c" type="1"/>
+    <File name="usb" path="" type="2"/>
+    <File name="libjpeg/jfdctfst.c" path="libjpeg/jfdctfst.c" type="1"/>
+    <File name="elements/textbox.c" path="elements/textbox.c" type="1"/>
+    <File name="STEMWIN/GRAPH_Private.h" path="STemWin_aktualny/STemWin/inc/GRAPH_Private.h" type="1"/>
+    <File name="MPU6050/inv_mpu.h" path="mpu6050/inv_mpu.h" type="1"/>
+    <File name="usb/usbd_req.h" path="USB/DEVICE_lib/usbd_req.h" type="1"/>
+    <File name="libjpeg/jconfig_template.h" path="libjpeg/jconfig_template.h" type="1"/>
+    <File name="MPU6050/fifo.h" path="mpu6050/fifo.h" type="1"/>
+    <File name="FreeRTOS/event_groups.h" path="FreeRTOS/Source/include/event_groups.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
+    <File name="tjpgdec/bsp_jpg.c" path="jpeg/bsp_jpg.c" type="1"/>
+    <File name="MPU6050.c" path="MPU5060.c" type="1"/>
+    <File name="STEMWIN/DROPDOWN_Private.h" path="STemWin_aktualny/STemWin/inc/DROPDOWN_Private.h" type="1"/>
+    <File name="usb/usbd_def.h" path="USB/DEVICE_lib/usbd_def.h" type="1"/>
+    <File name="libjpeg/jccolor.c" path="libjpeg/jccolor.c" type="1"/>
+    <File name="FreeRTOS/task.h" path="FreeRTOS/Source/include/task.h" type="1"/>
+    <File name="trace/trcUser.c" path="GenericRecorderLibSrc/trcUser.c" type="1"/>
+    <File name="FreeRTOS/mpu_wrappers.h" path="FreeRTOS/Source/include/mpu_wrappers.h" type="1"/>
+    <File name="apps/counter.h" path="counter.h" type="1"/>
+    <File name="STEMWIN/GUIConf.h" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/GUIConf.h" type="1"/>
+    <File name="libjpeg/jdpostct.c" path="libjpeg/jdpostct.c" type="1"/>
+    <File name="nokia_lcd/itoa.c" path="nokia_LCD/itoa.c" type="1"/>
+    <File name="apps/menuv2.h" path="menuv2.h" type="1"/>
+    <File name="usb/usbd_ioreq.c" path="USB/DEVICE_lib/usbd_ioreq.c" type="1"/>
+    <File name="stm32f4xx_it.h" path="stm32f4xx_it.h" type="1"/>
+    <File name="libjpeg/jquant2.c" path="libjpeg/jquant2.c" type="1"/>
+    <File name="FreeRTOS/core/croutine.c" path="FreeRTOS/Source/croutine.c" type="1"/>
+    <File name="FreeRTOS/deprecated_definitions.h" path="FreeRTOS/Source/include/deprecated_definitions.h" type="1"/>
+    <File name="ff" path="" type="2"/>
+    <File name="cmsis_lib/include/stm32f4xx_iwdg.h" path="cmsis_lib/include/stm32f4xx_iwdg.h" type="1"/>
+    <File name="STEMWIN/PROGBAR_Private.h" path="STemWin_aktualny/STemWin/inc/PROGBAR_Private.h" type="1"/>
+    <File name="FreeRTOS/croutine.h" path="FreeRTOS/Source/include/croutine.h" type="1"/>
+    <File name="STEMWIN/FRAMEWIN_Private.h" path="STemWin_aktualny/STemWin/inc/FRAMEWIN_Private.h" type="1"/>
+    <File name="apps/mp3.h" path="mp3.h" type="1"/>
+    <File name="usb/usbh_msc_core.c" path="USB/HOST_lib/usbh_msc_core.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
+    <File name="MPU6050/inv_mpu.c" path="mpu6050/inv_mpu.c" type="1"/>
+    <File name="STEMWIN/ICONVIEW_Private.h" path="STemWin_aktualny/STemWin/inc/ICONVIEW_Private.h" type="1"/>
+    <File name="apps/counter.c" path="counter.c" type="1"/>
+    <File name="STEMWIN/GUIConf.c" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/GUIConf.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
+    <File name="STEMWIN/SPINBOX_Private.h" path="STemWin_aktualny/STemWin/inc/SPINBOX_Private.h" type="1"/>
+    <File name="libjpeg/jdct.h" path="libjpeg/jdct.h" type="1"/>
+    <File name="usb/usbh_msc_usr.h" path="USB/DRD/usbh_msc_usr.h" type="1"/>
+    <File name="libjpeg/jquant1.c" path="libjpeg/jquant1.c" type="1"/>
+    <File name="STEMWIN" path="" type="2"/>
+    <File name="libjpeg/jidctfst.c" path="libjpeg/jidctfst.c" type="1"/>
+    <File name="FreeRTOS/timers.h" path="FreeRTOS/Source/include/timers.h" type="1"/>
+    <File name="usb/usbd_msc_bot.c" path="USB/DEVICE_lib/usbd_msc_bot.c" type="1"/>
+    <File name="libjpeg/jidctflt.c" path="libjpeg/jidctflt.c" type="1"/>
+    <File name="libjpeg/jcarith.c" path="libjpeg/jcarith.c" type="1"/>
+    <File name="libjpeg/decode.c" path="libjpeg/decode.c" type="1"/>
+    <File name="usb/usbh_msc_usr.c" path="USB/DRD/usbh_msc_usr.c" type="1"/>
+    <File name="STEMWIN/LISTWHEEL_Private.h" path="STemWin_aktualny/STemWin/inc/LISTWHEEL_Private.h" type="1"/>
+    <File name="apps/mp3.c" path="mp3.c" type="1"/>
+    <File name="usb/usbd_conf.h" path="USB/DRD/usbd_conf.h" type="1"/>
+    <File name="trace/trcUser.h" path="GenericRecorderLibSrc/Include/trcUser.h" type="1"/>
+    <File name="FreeRTOS/core/event_groups.c" path="FreeRTOS/Source/event_groups.c" type="1"/>
+    <File name="apps/calc.c" path="calc.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
+    <File name="usb/usbd_msc_bot.h" path="USB/DEVICE_lib/usbd_msc_bot.h" type="1"/>
+    <File name="libjpeg/jmemmgr.c" path="libjpeg/jmemmgr.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_rng.h" path="cmsis_lib/include/stm32f4xx_rng.h" type="1"/>
+    <File name="STEMWIN/DIALOG_Intern.h" path="STemWin_aktualny/STemWin/inc/DIALOG_Intern.h" type="1"/>
+    <File name="global_inc.h" path="global_inc.h" type="1"/>
+    <File name="STEMWIN/SCROLLBAR.h" path="STemWin_aktualny/STemWin/inc/SCROLLBAR.h" type="1"/>
+    <File name="libjpeg/jfdctint.c" path="libjpeg/jfdctint.c" type="1"/>
+    <File name="STEMWIN/MULTIPAGE.h" path="STemWin_aktualny/STemWin/inc/MULTIPAGE.h" type="1"/>
+    <File name="nokia_lcd/FONT8x8.h" path="nokia_LCD/FONT8x8.h" type="1"/>
+    <File name="FreeRTOS/portable" path="" type="2"/>
+    <File name="STEMWIN/GUI_SetOrientation.h" path="STemWin_aktualny/STemWin/inc/GUI_SetOrientation.h" type="1"/>
+    <File name="FreeRTOS/queue.h" path="FreeRTOS/Source/include/queue.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_flash.h" path="cmsis_lib/include/stm32f4xx_flash.h" type="1"/>
+    <File name="STEMWIN/TEXT_Private.h" path="STemWin_aktualny/STemWin/inc/TEXT_Private.h" type="1"/>
+    <File name="STEMWIN/EDIT_Private.h" path="STemWin_aktualny/STemWin/inc/EDIT_Private.h" type="1"/>
+    <File name="libjpeg/jmorecfg.h" path="libjpeg/jmorecfg.h" type="1"/>
+    <File name="STEMWIN/MULTIPAGE_Private.h" path="STemWin_aktualny/STemWin/inc/MULTIPAGE_Private.h" type="1"/>
+    <File name="sram/sram.c" path="sram/sram.c" type="1"/>
+    <File name="apps/notepad.h" path="notepad.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
+    <File name="libjpeg/jerror.c" path="libjpeg/jerror.c" type="1"/>
+    <File name="STEMWIN/LCDConf.c" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/LCDConf.c" type="1"/>
+    <File name="FreeRTOS/portable/portmacro.h" path="FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h" type="1"/>
+    <File name="libjpeg/jdapimin.c" path="libjpeg/jdapimin.c" type="1"/>
+    <File name="STEMWIN/GUI_X_FreeRTOS.c" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/GUI_X_FreeRTOS.c" type="1"/>
+    <File name="elements/explorer.h" path="explorer.h" type="1"/>
+    <File name="ff/sdio_stm32f4.h" path="ff/sdio_stm32f4.h" type="1"/>
+    <File name="stm32f4xx_it.c" path="stm32f4xx_it.c" type="1"/>
+    <File name="apps/clock.c" path="clock.c" type="1"/>
+    <File name="libjpeg/jcdctmgr.c" path="libjpeg/jcdctmgr.c" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="sram/sram.h" path="sram/sram.h" type="1"/>
+    <File name="STEMWIN/CALENDAR.h" path="STemWin_aktualny/STemWin/inc/CALENDAR.h" type="1"/>
+    <File name="libjpeg/jcmainct.c" path="libjpeg/jcmainct.c" type="1"/>
+    <File name="apps/notepad.c" path="notepad.c" type="1"/>
+    <File name="usb/usbh_core.h" path="USB/HOST_lib/usbh_core.h" type="1"/>
+    <File name="libjpeg/jcomapi.c" path="libjpeg/jcomapi.c" type="1"/>
+    <File name="usb/usb_dcd_int.h" path="USB/OTG_driver/usb_dcd_int.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_rtc.c" path="cmsis_lib/source/stm32f4xx_rtc.c" type="1"/>
+    <File name="STEMWIN/TREEVIEW_Private.h" path="STemWin_aktualny/STemWin/inc/TREEVIEW_Private.h" type="1"/>
+    <File name="elements/explorer.c" path="explorer.c" type="1"/>
+    <File name="libjpeg/jdsample.c" path="libjpeg/jdsample.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="STEMWIN/IMAGE.h" path="STemWin_aktualny/STemWin/inc/IMAGE.h" type="1"/>
+    <File name="libjpeg/jdmarker.c" path="libjpeg/jdmarker.c" type="1"/>
+    <File name="STEMWIN/HEADER.h" path="STemWin_aktualny/STemWin/inc/HEADER.h" type="1"/>
+    <File name="STEMWIN/TREEVIEW.h" path="STemWin_aktualny/STemWin/inc/TREEVIEW.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_pwr.h" path="cmsis_lib/include/stm32f4xx_pwr.h" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="FreeRTOS/list.h" path="FreeRTOS/Source/include/list.h" type="1"/>
+    <File name="STEMWIN/SCROLLBAR_Private.h" path="STemWin_aktualny/STemWin/inc/SCROLLBAR_Private.h" type="1"/>
+    <File name="touch" path="" type="2"/>
+    <File name="usb/usb_dcd.c" path="USB/OTG_driver/usb_dcd.c" type="1"/>
+    <File name="usb/usbd_core.c" path="USB/DEVICE_lib/usbd_core.c" type="1"/>
+    <File name="FreeRTOS/memory" path="" type="2"/>
+    <File name="FreeRTOS/StackMacros.h" path="FreeRTOS/Source/include/StackMacros.h" type="1"/>
+    <File name="libjpeg/jcapimin.c" path="libjpeg/jcapimin.c" type="1"/>
+    <File name="apps/clock.h" path="clock.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_adc.h" path="cmsis_lib/include/stm32f4xx_adc.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="nokia_lcd/fonts.h" path="nokia_LCD/fonts.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_rng.c" path="cmsis_lib/source/stm32f4xx_rng.c" type="1"/>
+    <File name="usb/usbh_ioreq.h" path="USB/HOST_lib/usbh_ioreq.h" type="1"/>
+    <File name="STEMWIN/GUI_ARRAY_Private.h" path="STemWin_aktualny/STemWin/inc/GUI_ARRAY_Private.h" type="1"/>
+    <File name="usb/usbd_msc_core.h" path="USB/DEVICE_lib/usbd_msc_core.h" type="1"/>
+    <File name="STEMWIN/LISTBOX_Private.h" path="STemWin_aktualny/STemWin/inc/LISTBOX_Private.h" type="1"/>
+    <File name="MP3/vs1003.h" path="vs1003.h" type="1"/>
+    <File name="usb/usbd_core.h" path="USB/DEVICE_lib/usbd_core.h" type="1"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="STEMWIN/RADIO.h" path="STemWin_aktualny/STemWin/inc/RADIO.h" type="1"/>
+    <File name="STEMWIN/LCD_ConfDefaults.h" path="STemWin_aktualny/STemWin/inc/LCD_ConfDefaults.h" type="1"/>
+    <File name="libjpeg/jcinit.c" path="libjpeg/jcinit.c" type="1"/>
+    <File name="usb/usbh_hcs.h" path="USB/HOST_lib/usbh_hcs.h" type="1"/>
+    <File name="FreeRTOS/portable/port.c" path="FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c" type="1"/>
+    <File name="libjpeg/jconfig.h" path="libjpeg/jconfig.h" type="1"/>
+    <File name="STEMWIN/RADIO_Private.h" path="STemWin_aktualny/STemWin/inc/RADIO_Private.h" type="1"/>
+    <File name="FreeRTOS/FreeRTOS.h" path="FreeRTOS/Source/include/FreeRTOS.h" type="1"/>
+    <File name="trace/trcKernelHooks.h" path="GenericRecorderLibSrc/Include/trcKernelHooks.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_rtc.h" path="cmsis_lib/include/stm32f4xx_rtc.h" type="1"/>
+    <File name="STEMWIN/LCD_Private.h" path="STemWin_aktualny/STemWin/inc/LCD_Private.h" type="1"/>
+    <File name="usb/usbd_storage_msd.c" path="USB/DRD/usbd_storage_msd.c" type="1"/>
+    <File name="libjpeg/jidctint.c" path="libjpeg/jidctint.c" type="1"/>
+    <File name="libjpeg/jcmarker.c" path="libjpeg/jcmarker.c" type="1"/>
+    <File name="usb/usbd_msc_core.c" path="USB/DEVICE_lib/usbd_msc_core.c" type="1"/>
+    <File name="STEMWIN/MESSAGEBOX.h" path="STemWin_aktualny/STemWin/inc/MESSAGEBOX.h" type="1"/>
+    <File name="libjpeg/jccoefct.c" path="libjpeg/jccoefct.c" type="1"/>
+    <File name="STEMWIN/MULTIEDIT.h" path="STemWin_aktualny/STemWin/inc/MULTIEDIT.h" type="1"/>
+    <File name="trace/trcTypes.h" path="GenericRecorderLibSrc/Include/trcTypes.h" type="1"/>
+    <File name="libjpeg/jdhuff.c" path="libjpeg/jdhuff.c" type="1"/>
+    <File name="STEMWIN/GUI_Version.h" path="STemWin_aktualny/STemWin/inc/GUI_Version.h" type="1"/>
+    <File name="STEMWIN/IMAGE_Private.h" path="STemWin_aktualny/STemWin/inc/IMAGE_Private.h" type="1"/>
+    <File name="nokia_lcd/LCD_6300.c" path="nokia_LCD/LCD_6300.c" type="1"/>
+    <File name="libjpeg/jcapistd.c" path="libjpeg/jcapistd.c" type="1"/>
+    <File name="MPU6050/inv_mpu_dmp_motion_driver.c" path="mpu6050/inv_mpu_dmp_motion_driver.c" type="1"/>
+    <File name="STEMWIN/bsp.h" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/bsp.h" type="1"/>
+    <File name="usb/usbd_desc.c" path="USB/DRD/usbd_desc.c" type="1"/>
+    <File name="STEMWIN/KNOB.h" path="STemWin_aktualny/STemWin/inc/KNOB.h" type="1"/>
+    <File name="STEMWIN/WIDGET.h" path="STemWin_aktualny/STemWin/inc/WIDGET.h" type="1"/>
+    <File name="FreeRTOS/core/timers.c" path="FreeRTOS/Source/timers.c" type="1"/>
+    <File name="AB0805.c" path="AB0805.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
+    <File name="libjpeg/jdmaster.c" path="libjpeg/jdmaster.c" type="1"/>
+    <File name="usb/usbh_ioreq.c" path="USB/HOST_lib/usbh_ioreq.c" type="1"/>
+    <File name="STEMWIN/SLIDER_Private.h" path="STemWin_aktualny/STemWin/inc/SLIDER_Private.h" type="1"/>
+    <File name="STEMWIN/PROGBAR.h" path="STemWin_aktualny/STemWin/inc/PROGBAR.h" type="1"/>
+    <File name="FreeRTOS/semphr.h" path="FreeRTOS/Source/include/semphr.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_flash.c" path="cmsis_lib/source/stm32f4xx_flash.c" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="usb/usbd_usr.h" path="USB/DEVICE_lib/usbd_usr.h" type="1"/>
+    <File name="STEMWIN/LCD.h" path="STemWin_aktualny/STemWin/inc/LCD.h" type="1"/>
+    <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
+    <File name="usb/usb_hcd.h" path="USB/OTG_driver/usb_hcd.h" type="1"/>
+    <File name="STEMWIN/GUI_ConfDefaults.h" path="STemWin_aktualny/STemWin/inc/GUI_ConfDefaults.h" type="1"/>
+    <File name="STEMWIN/Global.h" path="STemWin_aktualny/STemWin/inc/Global.h" type="1"/>
+    <File name="STEMWIN/FRAMEWIN.h" path="STemWin_aktualny/STemWin/inc/FRAMEWIN.h" type="1"/>
+    <File name="libjpeg/jctrans.c" path="libjpeg/jctrans.c" type="1"/>
+    <File name="libjpeg/jdapistd.c" path="libjpeg/jdapistd.c" type="1"/>
+    <File name="trace" path="" type="2"/>
+    <File name="STEMWIN/WM_GUI.h" path="STemWin_aktualny/STemWin/inc/WM_GUI.h" type="1"/>
+    <File name="usb/usbd_desc.h" path="USB/DRD/usbd_desc.h" type="1"/>
+    <File name="STEMWIN/SLIDER.h" path="STemWin_aktualny/STemWin/inc/SLIDER.h" type="1"/>
+    <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
+    <File name="STEMWIN/DIALOG.h" path="STemWin_aktualny/STemWin/inc/DIALOG.h" type="1"/>
+    <File name="trace/trcHardwarePort.c" path="GenericRecorderLibSrc/trcHardwarePort.c" type="1"/>
+    <File name="ff/ffconf.h" path="ff/ffconf.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_i2c.c" path="cmsis_lib/source/stm32f4xx_i2c.c" type="1"/>
+    <File name="STEMWIN/GRAPH.h" path="STemWin_aktualny/STemWin/inc/GRAPH.h" type="1"/>
+    <File name="elements/button.h" path="elements/button.h" type="1"/>
+    <File name="AB0805.h" path="AB0805.h" type="1"/>
+    <File name="cmsis_lib/source" path="" type="2"/>
+    <File name="MP3/vs1003.c" path="vs1003.c" type="1"/>
+    <File name="STEMWIN/SIMConf.c" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/SIMConf.c" type="1"/>
+    <File name="usb/usb_regs.h" path="USB/OTG_driver/usb_regs.h" type="1"/>
+    <File name="STEMWIN/MENU_Private.h" path="STemWin_aktualny/STemWin/inc/MENU_Private.h" type="1"/>
+    <File name="apps/settings.c" path="settings.c" type="1"/>
+    <File name="usb/usbh_msc_bot.h" path="USB/HOST_lib/usbh_msc_bot.h" type="1"/>
+    <File name="libjpeg/jcmaster.c" path="libjpeg/jcmaster.c" type="1"/>
+    <File name="usb/usbh_hcs.c" path="USB/HOST_lib/usbh_hcs.c" type="1"/>
+    <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
+    <File name="usb/usb_hcd.c" path="USB/OTG_driver/usb_hcd.c" type="1"/>
+    <File name="FreeRTOS/projdefs.h" path="FreeRTOS/Source/include/projdefs.h" type="1"/>
+    <File name="usb/usbd_msc_data.h" path="USB/DEVICE_lib/usbd_msc_data.h" type="1"/>
+    <File name="libjpeg/jdarith.c" path="libjpeg/jdarith.c" type="1"/>
+    <File name="ff/ff.c" path="ff/ff.c" type="1"/>
+    <File name="apps/alarm.c" path="alarm.c" type="1"/>
+    <File name="STEMWIN/TEXT.h" path="STemWin_aktualny/STemWin/inc/TEXT.h" type="1"/>
+    <File name="usb/usbd_msc_mem.h" path="USB/DEVICE_lib/usbd_msc_mem.h" type="1"/>
+    <File name="ff/diskio.h" path="ff/diskio.h" type="1"/>
+    <File name="usb/usbd_usr.c" path="USB/DRD/usbd_usr.c" type="1"/>
+    <File name="tjpgdec/tjpgd.c" path="jpeg/tjpgd.c" type="1"/>
+    <File name="ff/integer.h" path="ff/integer.h" type="1"/>
+    <File name="ff/sdio_stm32f4.c" path="ff/sdio_stm32f4.c" type="1"/>
+    <File name="usb/usbh_core.c" path="USB/HOST_lib/usbh_core.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_sdio.h" path="cmsis_lib/include/stm32f4xx_sdio.h" type="1"/>
+    <File name="libjpeg/jdmainct.c" path="libjpeg/jdmainct.c" type="1"/>
+    <File name="MP3" path="" type="2"/>
+    <File name="STEMWIN/GUI_ARRAY.h" path="STemWin_aktualny/STemWin/inc/GUI_ARRAY.h" type="1"/>
+    <File name="libjpeg/jdatasrc.c" path="libjpeg/jdatasrc.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="usb/usb_dcd_int.c" path="USB/OTG_driver/usb_dcd_int.c" type="1"/>
+    <File name="STEMWIN/GUIDRV_DCache.h" path="STemWin_aktualny/STemWin/inc/GUIDRV_DCache.h" type="1"/>
+    <File name="usb/usbh_stdreq.h" path="USB/HOST_lib/usbh_stdreq.h" type="1"/>
+    <File name="STEMWIN/LISTBOX.h" path="STemWin_aktualny/STemWin/inc/LISTBOX.h" type="1"/>
+    <File name="trace/trcHardwarePort.h" path="GenericRecorderLibSrc/Include/trcHardwarePort.h" type="1"/>
+    <File name="STEMWIN/GUIDRV_Dist.h" path="STemWin_aktualny/STemWin/inc/GUIDRV_Dist.h" type="1"/>
+    <File name="libjpeg/jdcolor.c" path="libjpeg/jdcolor.c" type="1"/>
+    <File name="FreeRTOS/portable.h" path="FreeRTOS/Source/include/portable.h" type="1"/>
+    <File name="libjpeg" path="" type="2"/>
+    <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
+    <File name="syscalls" path="" type="2"/>
+    <File name="libjpeg/jutils.c" path="libjpeg/jutils.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_fsmc.h" path="cmsis_lib/include/stm32f4xx_fsmc.h" type="1"/>
+    <File name="usb/usbh_stdreq.c" path="USB/HOST_lib/usbh_stdreq.c" type="1"/>
+    <File name="STEMWIN/GUIDRV_DCache_Private.h" path="STemWin_aktualny/STemWin/inc/GUIDRV_DCache_Private.h" type="1"/>
+    <File name="libjpeg/jdinput.c" path="libjpeg/jdinput.c" type="1"/>
+    <File name="STEMWIN/SPINBOX.h" path="STemWin_aktualny/STemWin/inc/SPINBOX.h" type="1"/>
+    <File name="cmsis_lib/include" path="" type="2"/>
+    <File name="apps/alarm.h" path="alarm.h" type="1"/>
+    <File name="FreeRTOS/core/queue.c" path="FreeRTOS/Source/queue.c" type="1"/>
+    <File name="STEMWIN/BUTTON.h" path="STemWin_aktualny/STemWin/inc/BUTTON.h" type="1"/>
+    <File name="FreeRTOS" path="" type="2"/>
+    <File name="elements/button.c" path="elements/button.c" type="1"/>
+    <File name="STEMWIN/LCDConf.h" path="../../../../../../coocox_workspace/workspace/Final_FreeRTOS_nWatch_ZG/STemWin/Config/LCDConf.h" type="1"/>
+  </Files>
+</Project>

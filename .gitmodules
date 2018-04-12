@@ -1,0 +1,6 @@
+[submodule "uCLinux/u-boot"]
+	path = uCLinux/u-boot
+	url = git@github.com:robutest/u-boot.git
+[submodule "uCLinux/afboot-stm32"]
+	path = uCLinux/afboot-stm32
+	url = git@github.com:hhuysqt/afboot-stm32.git

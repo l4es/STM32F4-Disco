@@ -4,3 +4,9 @@
 [submodule "uCLinux/afboot-stm32"]
 	path = uCLinux/afboot-stm32
 	url = git@github.com:hhuysqt/afboot-stm32.git
+[submodule "StateOS-STM32F4Discovery"]
+	path = StateOS-STM32F4Discovery
+	url = git@github.com:stateos/StateOS-STM32F4Discovery.git
+[submodule "IntrOS-STM32F4Discovery"]
+	path = IntrOS-STM32F4Discovery
+	url = git@github.com:stateos/IntrOS-STM32F4Discovery.git

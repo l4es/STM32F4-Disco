@@ -1,24 +1,24 @@
 [submodule "uCLinux/u-boot"]
 	path = uCLinux/u-boot
-	url = https://github.com:robutest/u-boot.git
+	url = https://github.com/robutest/u-boot.git
 [submodule "uCLinux/afboot-stm32"]
 	path = uCLinux/afboot-stm32
-	url = https://github.com:hhuysqt/afboot-stm32.git
+	url = https://github.com/hhuysqt/afboot-stm32.git
 [submodule "StateOS-STM32F4Discovery"]
 	path = StateOS-STM32F4Discovery
-	url = https://github.com:stateos/StateOS-STM32F4Discovery.git
+	url = https://github.com/stateos/StateOS-STM32F4Discovery.git
 [submodule "IntrOS-STM32F4Discovery"]
 	path = IntrOS-STM32F4Discovery
-	url = https://github.com:stateos/IntrOS-STM32F4Discovery.git
+	url = https://github.com/stateos/IntrOS-STM32F4Discovery.git
 [submodule "FreeRTOS-uGFX-Demo/stm32f429-freertos800"]
 	path = FreeRTOS-uGFX-Demo/stm32f429-freertos800
-	url = https://github.com:winfred-lu/stm32f429-freertos800.git
+	url = https://github.com/winfred-lu/stm32f429-freertos800.git
 [submodule "FreeRTOS-STemWin-Demo-Coocox"]
 	path = FreeRTOS-STemWin-Demo-Coocox
-	url = https://github.com:kudl4t4/FreeRTOS_STemWIN_HAL_STM32F429_CooCox.git
+	url = https://github.com/kudl4t4/FreeRTOS_STemWIN_HAL_STM32F429_CooCox.git
 [submodule "STM32F429-Keil-Examples"]
 	path = STM32F429-Keil-Examples
-	url = https://github.com:MaJerle/stm32f429.git
+	url = https://github.com/MaJerle/stm32f429.git
 [submodule "STM32F4-ChibiOS-lwIP-pppos"]
 	path = STM32F4-ChibiOS-lwIP-pppos
 	url = https://github.com/wizhippo/stm32f4-chibios-lwip-pppos.git

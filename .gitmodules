@@ -16,3 +16,9 @@
 [submodule "FreeRTOS-STemWin-Demo-Coocox"]
 	path = FreeRTOS-STemWin-Demo-Coocox
 	url = git@github.com:kudl4t4/FreeRTOS_STemWIN_HAL_STM32F429_CooCox.git
+[submodule "STM32F429-Keil-Examples"]
+	path = STM32F429-Keil-Examples
+	url = git@github.com:MaJerle/stm32f429.git
+[submodule "STM32F4-ChibiOS-lwIP-pppos"]
+	path = STM32F4-ChibiOS-lwIP-pppos
+	url = https://github.com/wizhippo/stm32f4-chibios-lwip-pppos.git

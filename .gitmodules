@@ -25,3 +25,6 @@
 [submodule "STM32F4-RT-Thread"]
 	path = STM32F4-RT-Thread
 	url = https://github.com/RT-Thread/realboard-stm32f4.git
+[submodule "STM32F4_USB_MP3"]
+	path = STM32F4_USB_MP3
+	url = https://github.com/vanbwodonk/STM32F4_USB_MP3.git
